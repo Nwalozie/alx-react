@@ -10,7 +10,7 @@ const updateCounter = () => {
 };
 
 
-// Add elements to the body using jQuery
+// Adds elements to the body using jQuery
 $('body').append('<p>Holberton Dashboard</p>');
 $('body').append('<p>Dashboard data for the students</p>');
 $('body').append('<button id="startButton">Click here to get started</button>');
