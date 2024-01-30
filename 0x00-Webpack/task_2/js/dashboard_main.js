@@ -1,21 +1,19 @@
 import $ from 'jquery';
 import _ from 'lodash';
+import '../css/main.css';
 
-let count = 0;
-
-// Function to update the counter and display the count
-const updateCounter = () => {
-  count++;
-  $('#count').text(`${count} clicks on the button`);
-};
-
-
-// Adds elements to the body using jQuery
+$('body').append('<div id="logo"></div>');
 $('body').append('<p>Holberton Dashboard</p>');
 $('body').append('<p>Dashboard data for the students</p>');
-$('body').append('<button id="startButton">Click here to get started</button>');
+$('body').append('<button>Click here to get started</button>');
 $('body').append('<p id="count"></p>');
 $('body').append('<p>Copyright - Holberton School</p>');
 
-// Bind updateCounter function to button click using Lodash debounce
-$('#startButton').on('click', _.debounce(updateCounter, 500)); // Debounce for 1000 milliseconds (1 second)
+let count = 0;
+
+function updateCounter() {
+  count++;
+  $('#count').html(`${count} clicks on the button`);
+}
+
+$('button').on('click', _.debounce(updateCounter, 500));
